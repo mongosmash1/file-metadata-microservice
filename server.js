@@ -2,6 +2,8 @@
 
 const express = require('express');
 const app = express();
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 const port = process.env.PORT;
 
 app.use('/public', express.static(process.cwd() + '/public'));
