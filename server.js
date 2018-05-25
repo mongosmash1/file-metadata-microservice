@@ -15,7 +15,7 @@ app.route('/')
   })
 
 // retries file size of submitted file, file is not saved
-app.post('/', upload.single('file'), function (req, res, next) {
+app.post('/get-file-size/', upload.single('file'), function (req, res, next) {
   var filesize = {
     size: req.file.size
   };
@@ -40,4 +40,3 @@ app.use(function(err, req, res, next) {
 app.listen(port, function () {
   console.log('Node.js listening ...');
 });
-
