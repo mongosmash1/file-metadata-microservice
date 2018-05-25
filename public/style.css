@@ -39,3 +39,17 @@ img {
 	margin: 20px auto 0 auto;
 	display: block;
 }
+
+form {
+  width: 50%;
+}
+
+input {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
+p {
+  font-size: .75em;
+  weight: normal;
+}

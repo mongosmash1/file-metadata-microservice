@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>FCC Request Header Parser Microservice</title>
+    <title>FCC File Metadata Microservice</title>
     <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <link href="/public/style.css" rel="stylesheet" type="text/css">
@@ -10,14 +10,21 @@
 
   <body>
     <div class="container">
-      <h1>freeCodeCamp Backend API Projects - Request Header Parser Microservice</h1>
-      <h3>Simple API to return a browser's IP address, language, and operating system</h3>
+      <h1>freeCodeCamp Backend API Projects - File Metadata Microservice</h1>
+      <h3>Simple API to return the file size of a submitted document</h3>
         
-      <h3>Example usage:<br>
-        <code class="example">https://ms1-rhp-micro.glitch.me/api/whoami/</code><br>
+      <h3>
+        <form enctype="multipart/form-data" method="POST" name="form1">
+          <fieldset>
+            <legend>UPLOAD FILE</legend>
+            <input name="file" size="40" type="FILE">
+            <input name="Submit" value="Upload" type="SUBMIT">
+          </fieldset>
+          <p>&nbsp&nbsp***PLEASE NOTE*** Once filesize has been determined, the file is discarded.</p>
+        </form>
         <br>
         Example output:<br>
-        <code class="example">{ "ipaddress":"12.231.183.198", "language":"en-US", "software":"Windows NT 10.0; Win64; x64" }</code>
+        <code class="example">{ "size":322908 }</code>
         </h3>
       </div>
    </body>
