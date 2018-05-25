@@ -13,8 +13,15 @@
       <h1>freeCodeCamp Backend API Projects - File Metadata Microservice</h1>
       <h3>Simple API to return the file size of a submitted document</h3>
         
-      <h3>Example usage:<br>
-        <code class="example">https://ms1-fm-micro.glitch.me/</code><br>
+      <h3>
+        <form enctype="multipart/form-data" method="POST" name="form1">
+          <fieldset>
+            <legend>UPLOAD FILE</legend>
+            <input name="file" size="40" type="FILE">
+            <input name="Submit" value="Upload" type="SUBMIT">
+          </fieldset>
+          <p>&nbsp&nbsp***PLEASE NOTE*** Once filesize has been determined, the file is discarded.</p>
+        </form>
         <br>
         Example output:<br>
         <code class="example">{ "size":322908 }</code>

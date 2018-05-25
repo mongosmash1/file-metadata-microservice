@@ -3,8 +3,8 @@
 const express = require('express');
 const app = express();
 const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
 const port = process.env.PORT;
+const upload = multer();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -14,18 +14,13 @@ app.route('/')
     res.sendFile(process.cwd() + '/views/index.html');
   })
 
-// timestamp microservice
-app.route('/api/whoami/')
-  .get(function(req, res) {
-    // left most IP is remote IP prior to the Glitch proxy
-    let ipAddress = req.headers['x-forwarded-for'].split(',')[0];
-    // left most languange is preferred language
-    let language = req.headers['accept-language'].split(',')[0];
-    // splits user-agent header on ( and ) and pulls OS from resulting array
-    let operatingSystem = req.headers['user-agent'].split(/[\(\)]/)[1];
-
-    res.json({ ipaddress: ipAddress, language: language, software: operatingSystem });
-  })
+// retries file size of submitted file, file is not saved
+app.post('/', upload.single('file'), function (req, res, next) {
+  var filesize = {
+    size: req.file.size
+  };
+  res.json(filesize);
+})
 
 // respond not found for all invalid routes
 app.use(function(req, res, next){
